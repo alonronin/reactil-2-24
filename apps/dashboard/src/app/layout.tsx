@@ -1,4 +1,5 @@
-import './global.css';
+import '@reactil/tailwind-preset';
+import { ModeToggle, ThemeProvider } from '@reactil/components';
 
 export const metadata = {
   title: 'Welcome to dashboard',
@@ -11,8 +12,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <body>
+          <header>
+            <ModeToggle />
+          </header>
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

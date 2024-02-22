@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@reactil/components": ["components/src/index.ts"],
+      "@reactil/components/server": ["components/src/server.ts"],
+      "@reactil/tailwind-preset": ["tailwind-preset/globals.css"],
+      "@reactil/utils": ["utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
